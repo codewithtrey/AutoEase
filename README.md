@@ -2,8 +2,9 @@
 
 Team:
 
-* Person 1 - Which microservice?
-* Jason Seet - Sales
+* Trey - Service
+* Jason -Sales
+
 ## Design
 
 ## Service microservice
