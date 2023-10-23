@@ -3,8 +3,7 @@
 Team:
 
 * Person 1 - Which microservice?
-* Person 2 - Which microservice?
-
+* Jason Seet - Sales
 ## Design
 
 ## Service microservice
@@ -14,5 +13,4 @@ microservice, here.
 
 ## Sales microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+Buy these cars
