@@ -3,7 +3,7 @@
 Team:
 
 * Trey - Service
-* Jason -Sales
+* Jason - Sales
 
 ## Design
 
