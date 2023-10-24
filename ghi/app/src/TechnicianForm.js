@@ -7,19 +7,6 @@ function TechnicianForm() {
     employee_id: "",
   });
 
-  // const getData = async () => {
-  //   const url = "http://localhost:8080/api/technicians/";
-  //   const response = await fetch(url);
-
-  //   if (response.ok) {
-  //     const data = await response.json();
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -48,10 +35,8 @@ function TechnicianForm() {
     const value = e.target.value;
     const inputName = e.target.name;
     setFormData({
-      //Previous form data is spread (i.e. copied) into our new state object
       ...formData,
 
-      //On top of the that data, we add the currently engaged input key and value
       [inputName]: value,
     });
   };
