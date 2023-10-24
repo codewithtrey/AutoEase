@@ -41,7 +41,8 @@ class AppointmentListEncoder(ModelEncoder):
     model = Appointment
     properties = [
         "date_time",
-        "customer"
+        "customer",
+        "id"
     ]
 
 
@@ -127,4 +128,15 @@ def api_list_appointments(request):
             appointment,
             encoder=AppointmentDetailEncoder,
             safe=False,
+        )
+
+
+@require_http_methods(["DELETE"])
+def api_delete_appointment(request,pk):
+    if request.method == "DELETE":
+        count, _= Appointment.objects.filter(id=pk).delete()
+        return JsonResponse(
+            {
+                "deleted": count > 0
+            }
         )
