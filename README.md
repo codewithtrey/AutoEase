@@ -3,7 +3,7 @@
 Team:
 
 * Trey - Service
-* Person 2 - Which microservice?
+* Jason -Sales
 
 ## Design
 
@@ -14,5 +14,4 @@ microservice, here.
 
 ## Sales microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+Buy these cars
