@@ -45,6 +45,11 @@ function Nav() {
                 Service Appointments
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/appointments/history/">
+                Service History
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

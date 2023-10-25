@@ -1,14 +1,10 @@
 import json
-from .models import AutomobileVO, Technician, Appointment
+from .models import Technician, Appointment
 from django.views.decorators.http import require_http_methods
-from common.json import ModelEncoder
 from django.http import JsonResponse
 from .encoders import (
     TechnicianDetailEncoder,
-    TechnicianListEncoder,
     AppointmentDetailEncoder,
-    AppointmentListEncoder,
-    AutomobileVODetailEncoder,
 )
 
 
@@ -113,44 +109,48 @@ def api_show_appointment(request, pk):
 @require_http_methods(["PUT"])
 def api_update_appointment_canceled(request, pk):
     if request.method == "PUT":
-        content = json.loads(request.body)
         try:
-            if "status" in content:
-                content["status"] = "canceled"
+            content = json.loads(request.body) if request.body else {}
+            model = Appointment.objects.get(id=pk)
 
-                Appointment.objects.filter(id=pk).update(**content)
-                appointment = Appointment.objects.get(id=pk)
+            content["status"] = "canceled"
 
-        except Appointment.DoesNotExist:
+            props = ["status"]
+            for prop in props:
+                if prop in content:
+                    setattr(model, prop, content[prop])
+            model.save()
             return JsonResponse(
-                {"message": "Invalid appointment id"},
-                status=400,
+                model,
+                encoder=AppointmentDetailEncoder,
+                safe=False,
             )
-        return JsonResponse(
-            appointment,
-            encoder=AppointmentDetailEncoder,
-            safe=False,
-        )
+        except Appointment.DoesNotExist:
+            response = JsonResponse({"message": "Does not exist"})
+            response.status_code = 404
+            return response
 
 
 @require_http_methods(["PUT"])
 def api_update_appointment_finished(request, pk):
     if request.method == "PUT":
-        content = json.loads(request.body)
         try:
-            if "status" in content:
-                content["status"] = "finished"
+            content = json.loads(request.body) if request.body else {}
+            model = Appointment.objects.get(id=pk)
 
-                Appointment.objects.filter(id=pk).update(**content)
-                appointment = Appointment.objects.get(id=pk)
+            content["status"] = "finished"
 
-        except Appointment.DoesNotExist:
+            props = ["status"]
+            for prop in props:
+                if prop in content:
+                    setattr(model, prop, content[prop])
+            model.save()
             return JsonResponse(
-                {"message": "Invalid appointment id"},
-                status=400,
+                model,
+                encoder=AppointmentDetailEncoder,
+                safe=False,
             )
-        return JsonResponse(
-            appointment,
-            encoder=AppointmentDetailEncoder,
-            safe=False,
-        )
+        except Appointment.DoesNotExist:
+            response = JsonResponse({"message": "Does not exist"})
+            response.status_code = 404
+            return response
