@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import TechnicianForm from "./TechnicianForm";
 import TechnicianList from "./TechnicianList";
 import AppointmentForm from "./AppointmentForm";
+import AppointmentList from "./AppointmentList";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             <Route path="create" element={<TechnicianForm />} />
           </Route>
           <Route path="appointments">
-            {/* <Route path="" element={<AppointmentList />} /> */}
+            <Route path="" element={<AppointmentList />} />
             <Route path="create" element={<AppointmentForm />} />
           </Route>
         </Routes>

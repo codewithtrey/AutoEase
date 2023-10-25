@@ -3,22 +3,8 @@ import { useEffect, useState } from "react";
 function TechnicianList() {
   const [technicians, setTechnicians] = useState([]);
 
-  async function handleDelete(event, id) {
-    const fetchOptions = {
-      method: "DELETE",
-    };
-    const request = await fetch(
-      `http://localhost:8080/api/technicians/${id}`,
-      fetchOptions
-    );
-
-    if (request.ok) {
-      getData();
-    }
-  }
-
   const getData = async () => {
-    const response = await fetch("http://localhost:8080/api/technicians");
+    const response = await fetch("http://localhost:8080/api/technicians/");
 
     if (response.ok) {
       const data = await response.json();
