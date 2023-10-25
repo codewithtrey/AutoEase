@@ -18,7 +18,7 @@ function AppointmentList() {
 
       setAppointments(appointmentData.appointments);
 
-      const vins = inventoryData.autos.map(auto => auto.vin);
+      const vins = inventoryData.autos.map((auto) => auto.vin);
       setInventoryVins(vins);
     }
   };
@@ -26,6 +26,34 @@ function AppointmentList() {
   useEffect(() => {
     getData();
   }, []);
+
+  async function cancelAppointment(appointmentId) {
+    const fetchOptions = {
+      method: "PUT",
+    };
+    const request = await fetch(
+      `http://localhost:8080/api/appointments/${appointmentId}/cancel/`,
+      fetchOptions
+    );
+
+    if (request.ok) {
+      getData();
+    }
+  }
+
+  async function finishAppointment(appointmentId) {
+    const fetchOptions = {
+      method: "PUT",
+    };
+    const request = await fetch(
+      `http://localhost:8080/api/appointments/${appointmentId}/finish/`,
+      fetchOptions
+    );
+
+    if (request.ok) {
+      getData();
+    }
+  }
 
   return (
     <table className="table table-striped">
@@ -53,6 +81,20 @@ function AppointmentList() {
                 {appointment.technician.last_name}
               </td>
               <td>{appointment.reason}</td>
+              <td>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => cancelAppointment(appointment.id)}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="btn btn-success"
+                  onClick={() => finishAppointment(appointment.id)}
+                >
+                  Finish
+                </button>
+              </td>
             </tr>
           );
         })}
