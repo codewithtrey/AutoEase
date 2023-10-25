@@ -50,6 +50,16 @@ function Nav() {
                 Service History
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/models/">
+                Models
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/models/create/">
+                Create a Vehicle Model
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
