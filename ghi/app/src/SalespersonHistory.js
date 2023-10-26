@@ -33,12 +33,10 @@ function SalespersonHistory() {
     console.log(sale)
     
     useEffect(() => {
-    getSalespeople();
-    }, []);
+    getSalespeople()
+    getSales()
+    }, [])
     
-    useEffect(() => {
-    getSales();
-    }, []);
 
 return(
         <div className="row">

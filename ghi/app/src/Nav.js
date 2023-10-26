@@ -21,10 +21,51 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
-                Home
+              <NavLink className="nav-link" to="/manufacturers/">
+                Manufacturers
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/manufacturers/new/">
+                Create a Manufacturer
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/salespeople/">
+                Salespeople
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/salespeople/new/">
+               Create a Salesperson
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/customers/">
+                Customers
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/customers/new/">
+                Create a Customer
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/sales/">
+                Sales
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/sales/new/">
+                Create a Sale
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/sales/history/">
+                Sales History
+              </NavLink>
+            </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/technicians/create/">
                 Add a Technician
@@ -63,6 +104,11 @@ function Nav() {
             <li className="nav-item">
               <NavLink className="nav-link" to="/automobiles/create/">
                 Create an Automobile
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/automobiles/">
+                Automobiles
               </NavLink>
             </li>
           </ul>
