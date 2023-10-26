@@ -105,7 +105,7 @@ function SalesForm() {
                     <option value="">Choose an automobile</option>
                     {automobiles?.map(automobile => {
                         return (
-                        <option key={automobile.vin} value={automobile.id}>{automobile.vin}</option>
+                        <option key={automobile.vin} value={automobile.vin}>{automobile.vin}</option>
                         )
                     })}
                     </select>
