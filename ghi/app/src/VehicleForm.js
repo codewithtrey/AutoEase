@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function VehicleForm() {
-  const [models, setModels] = useState([]);
+  const [manufacturers, setManufacturers] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     manufacturer: "",
@@ -13,12 +13,12 @@ function VehicleForm() {
   }, []);
 
   const getData = async () => {
-    const url = "http://localhost:8100/api/models/";
+    const url = "http://localhost:8100/api/manufacturers";
     const response = await fetch(url);
 
     if (response.ok) {
       const data = await response.json();
-      setModels(data.models);
+      setManufacturers(data.manufacturers);
     }
   };
 
@@ -57,7 +57,6 @@ function VehicleForm() {
     const inputName = e.target.name;
     setFormData({
       ...formData,
-
       [inputName]: value,
     });
   };
@@ -104,12 +103,9 @@ function VehicleForm() {
                 className="form-select"
               >
                 <option value="">Choose a manufacturer</option>
-                {models.map((model) => (
-                  <option
-                    key={model.manufacturer.id}
-                    value={model.manufacturer.id}
-                  >
-                    {model.manufacturer.id}
+                {manufacturers.map((manufacturer) => (
+                  <option key={manufacturer.id} value={manufacturer.id}>
+                    {manufacturer.name}
                   </option>
                 ))}
               </select>
