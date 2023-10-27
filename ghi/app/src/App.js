@@ -9,16 +9,16 @@ import ServiceHistory from "./ServiceHistory";
 import VehicleList from "./VehicleList";
 import VehicleForm from "./VehicleForm";
 import AutomobileForm from "./AutomobileForm";
-import SalespersonForm from './SalespersonForm';
-import SalespeopleList from './SalespeopleList';
-import CustomerList  from './CustomerList';
-import CustomerForm from './CustomerForm';
-import SalesList from './SalesList';
-import SalesForm from './SalesForm';
-import SalespersonHistory from './SalespersonHistory';
-import ManufacturerList from './ManufacturerList';
-import ManufacturerForm from './ManufacturerForm';
-import AutomobileList from './AutomobileList';
+import SalespersonForm from "./SalespersonForm";
+import SalespeopleList from "./SalespeopleList";
+import CustomerList from "./CustomerList";
+import CustomerForm from "./CustomerForm";
+import SalesList from "./SalesList";
+import SalesForm from "./SalesForm";
+import SalespersonHistory from "./SalespersonHistory";
+import ManufacturerList from "./ManufacturerList";
+import ManufacturerForm from "./ManufacturerForm";
+import AutomobileList from "./AutomobileList";
 
 function App() {
   return (
@@ -61,9 +61,8 @@ function App() {
             <Route path="new" element={<ManufacturerForm />} />
           </Route>
           <Route path="automobiles">
-            <Route path="" element={<AutomobileList />} />      
+            <Route path="" element={<AutomobileList />} />
           </Route>
-          
         </Routes>
       </div>
     </BrowserRouter>

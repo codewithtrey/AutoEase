@@ -122,7 +122,7 @@ function AppointmentForm() {
                     key={technician.employee_id}
                     value={technician.employee_id}
                   >
-                    {technician.employee_id}
+                    {technician.first_name} {technician.last_name}
                   </option>
                 ))}
               </select>

@@ -11,9 +11,9 @@ from .views import (
 
 urlpatterns = [
     path("salespeople/", list_salespeople, name="list_salespeople"),
-    path("salespeople/<int:pk>/",delete_salesperson, name = "delete_salesperson"),
-    path("customers/", list_customers, name = "list_customer"),
-    path("customers/<int:pk>/",delete_customer, name = "delete_customer"),
-    path("sales/", list_sales, name = "list_sales"),
-    path("sales/<int:pk>/", delete_sale, name = "delete_sale"),
+    path("salespeople/<int:pk>/", delete_salesperson, name="delete_salesperson"),
+    path("customers/", list_customers, name="list_customer"),
+    path("customers/<int:pk>/", delete_customer, name="delete_customer"),
+    path("sales/", list_sales, name="list_sales"),
+    path("sales/<int:pk>/", delete_sale, name="delete_sale"),
 ]

@@ -30,7 +30,6 @@ function SalespersonHistory() {
     setSelectedSalesperson(parseInt(value, 10));
   }
 
-  console.log(selectedSalesperson);
 
   useEffect(() => {
     getSalespeople();

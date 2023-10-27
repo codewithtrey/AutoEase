@@ -1,4 +1,4 @@
-from .models import AutomobileVO,Salesperson,Customer,Sale
+from .models import AutomobileVO, Salesperson, Customer, Sale
 from common.json import ModelEncoder
 
 
@@ -42,7 +42,7 @@ class SaleEncoder(ModelEncoder):
         "id",
     ]
     encoders = {
-        "automobile" : AutomobileVOEncoder(),
-        "salesperson" : SalespersonEncoder(),
-        "customer" : CustomerEncoder(),
+        "automobile": AutomobileVOEncoder(),
+        "salesperson": SalespersonEncoder(),
+        "customer": CustomerEncoder(),
     }
