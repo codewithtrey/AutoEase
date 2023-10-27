@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function AutomobileForm() {
-  const [autos, setAutos] = useState([]);
+  const [models, setModels] = useState([]);
   const [formData, setFormData] = useState({
     color: "",
     year: "",
@@ -14,12 +14,12 @@ function AutomobileForm() {
   }, []);
 
   const getData = async () => {
-    const url = "http://localhost:8100/api/automobiles/";
+    const url = "http://localhost:8100/api/models";
     const response = await fetch(url);
 
     if (response.ok) {
       const data = await response.json();
-      setAutos(data.autos);
+      setModels(data.models);
     }
   };
 
@@ -29,11 +29,11 @@ function AutomobileForm() {
     const automobileUrl = "http://localhost:8100/api/automobiles/";
 
     const requestData = {
-        color: formData.color,
-        year: formData.year,
-        vin: formData.vin,
-        model_id: formData.model,
-      };
+      color: formData.color,
+      year: formData.year,
+      vin: formData.vin,
+      model_id: formData.model,
+    };
 
     const fetchConfig = {
       method: "post",
@@ -60,7 +60,6 @@ function AutomobileForm() {
     const inputName = e.target.name;
     setFormData({
       ...formData,
-
       [inputName]: value,
     });
   };
@@ -120,12 +119,12 @@ function AutomobileForm() {
                 className="form-select"
               >
                 <option value="">Choose a model</option>
-                {autos.map((auto) => (
+                {models.map((model) => (
                   <option
-                    key={auto.id}
-                    value={auto.id}
+                    key={model.id}
+                    value={model.id}
                   >
-                    {auto.model.name}
+                    {model.name}
                   </option>
                 ))}
               </select>
