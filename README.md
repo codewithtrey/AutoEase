@@ -1,18 +1,42 @@
 # CarCar
 
 Team:
+- Trejon McGee - Services
+- Jason Seet - Sales
+  
+# Technologies Used
 
-- Trey - Service
-- Jason - Sales
+[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
+[![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/)
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
+[![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-## Design
+## Services microservice
 
-## Service microservice
+- **_Service API_**: RESTful API to handle automobile service appointments.
+- **_Service Poller_**: Poller to poll the **Inventory API** for manufacturer, vehiclemodel and automobile.
+- **Django**: Backend models, views, urls. Views have complete CRUD functions for service appointments and technicians. Settings edited to ensure Django app and project are linked, and added CORS permissions.
+- **Inventory** **API**: Provides **Manufacturer**, **VehicleModel** and **Automobile** RESTful API endpoints.
+- **Database**: PostgreSQL database that holds the data of all microservices.
+- **React**: React-based front-end application to interact with services.
 
-I have 3 models, AutombileVO, Technician, and Appointment. The AutomobileVO connects to the inventory microservice with the incorportation of the poller. When a new vehicle is added to the inventory, the poller updates the AutomobileVO every 60 seconds with the updated VINs from the inventory service. The technician and appointment models are integrated with the service history. I have built in functionality to search by VIN and that specific service history will show. After a specific VIN is entered in the search bar, the application checks to see if that VIN exists in the inventory and marks the customer as a VIP.
+- Class components were utilized to create Service appointments, list service appointments, list service history, and create a technician.
 
 ## Sales microservice
 
-The sales microservice allows for users to visualize and add customers, salespeople, and sales. A poller is used
-to obtain automobile info from the inventory microservice and stored into the AutomobileVO model. This information
-is used to help facilitate the completion of the forms.
+- **_Sales API_**: RESTful API to handle automobile sales
+- **_Sales Poller_**: Poller to poll the Inventory API to get the automobiles and append the automobileVO
+- **DJANGO**: Beackend models, views and urls. Views with completed CRUD functions.
+
+- All forms and lists created in react with functional components
+
+# Getting the app running
+
+1. Git clone into your local repository: git clone (repo)
+2. Change directory: cd carcar
+3. Build the image: docker compose build
+4. Run the containers: docker compose up
+5. Open browser to localhost
