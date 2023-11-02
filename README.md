@@ -37,6 +37,7 @@ Team:
 
 1. Git clone into your local repository: git clone (repo)
 2. Change directory: cd carcar
-3. Build the image: docker compose build
-4. Run the containers: docker compose up
-5. Open browser to localhost
+3. Create volume: docker volume create beta-data
+4. Build the image: docker compose build
+5. Run the containers: docker compose up
+6. Open browser to localhost
