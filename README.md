@@ -35,9 +35,24 @@ Team:
 
 # Getting the app running
 
-1. Git clone into your local repository: git clone (repo)
-2. Change directory: cd autoease
-3. Create volume: docker volume create beta-data
-4. Build the image: docker compose build
-5. Run the containers: docker compose up
+1. Git clone into your local repository:
+```sh
+git clone (repo)
+```
+2. Change directory:
+```sh
+cd autoease
+```
+3. Create volume:
+```sh
+docker volume create beta-data
+```
+4. Build the image:
+```sh
+docker compose build
+```
+5. Run the containers:
+```sh
+docker compose up
+```
 6. Open browser to localhost
