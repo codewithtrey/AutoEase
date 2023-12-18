@@ -1,4 +1,4 @@
-# CarCar
+# AutoEase
 
 Team:
 - Trejon McGee - Services
@@ -36,7 +36,7 @@ Team:
 # Getting the app running
 
 1. Git clone into your local repository: git clone (repo)
-2. Change directory: cd carcar
+2. Change directory: cd autoease
 3. Create volume: docker volume create beta-data
 4. Build the image: docker compose build
 5. Run the containers: docker compose up
